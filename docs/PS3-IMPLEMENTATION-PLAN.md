@@ -1,10 +1,10 @@
 # NOVA PS3 Implementation Plan
 
-## Important status
+## Current status
 
-The current GitHub Pages project is a browser-based interface prototype. It does not run inside GTA V, load as a PS3 plugin, or access the console filesystem.
+The GitHub Pages project is a browser-based interface prototype. It does not run inside GTA V, load as a PS3 plugin, control the game, or access the console filesystem. Buttons and switches only change the page preview.
 
-A real GTA V PS3 1.10 implementation is not yet built or verified. Do not install this website as a plugin or replace game files with it.
+A real GTA V PS3 1.10 implementation has not been built or verified. Do not install this website as a plugin or replace game files with it.
 
 ## Menu order
 
@@ -12,35 +12,56 @@ A real GTA V PS3 1.10 implementation is not yet built or verified. Do not instal
 2. Characters
 3. Vehicles
 4. Teleport
-5. Settings
-6. File Manager
+5. File Manager
+6. Settings
 
-## Player module — first development target
+## Module specifications
 
-Planned controls:
-- Fly Mode toggle
-- Noclip toggle
+### 1. Player
+- Fly Mode toggle concept
+- Noclip toggle concept
 - Flight speed presets: Slow, Normal, Fast
-- Proposed controller mapping: left stick to move, right stick to look, R2 to rise, L2 to descend
+- Super Jump and Fast Run options
+- Controller mapping is not implemented or verified.
 
-These are design requirements only. They are not working in-game controls until a compatible PS3 1.10 plugin is implemented and tested.
+### 2. Characters
+- Michael
+- Franklin
+- Trevor
+- Lamar
 
-## File Manager — last development target
+### 3. Vehicles
+- Vehicle selection/spawner interface concept
+- Repair and clean options
+- Vehicle option placeholders
+- Vehicle-name input in the web preview only
 
-Potential USB support must be verified on the actual PS3 before implementation. USB mount names such as /dev_usb000 can vary by device and connection order.
+### 4. Teleport
+- Waypoint placeholder
+- Character safehouse shortcuts
+- Custom coordinate entry in the web preview only
 
-Safety requirements:
+### 5. File Manager
+Potential USB support must be verified on the actual PS3. USB mount names and paths can vary by device and connection order. A website cannot see PS3 USB storage.
+
+Safety requirements for any future console-side file tool:
 - Detect and display mounted USB devices before browsing.
 - Start with read-only browsing.
 - Show full source and destination paths before copying.
 - Never overwrite original game files by default.
 - Require a separate confirmation before any write, move, or delete.
-- Keep backups and log each completed operation.
+- Keep backups and log completed operations.
 - Only target a verified mod-data folder, not an assumed GTA installation path.
+
+### 6. Settings
+- Theme preference concept
+- Startup sound preference placeholder
+- Open sequence and close-button preference placeholders
+- Reset website preview controls
 
 ## Compatibility checks still required
 
 - Confirm the exact GTA V title ID and active installation path.
 - Confirm the running game update is 1.10.
 - Identify a documented plugin loader and development toolchain compatible with the console setup.
-- Test on backed-up, non-original files first.
+- Test only with backed-up, non-original files first.
