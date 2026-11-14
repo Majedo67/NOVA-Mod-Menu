@@ -1,6 +1,6 @@
-# NOVA MOD MENU
+# PSAD MOD MENU
 
-A blue/cyan interface prototype targeting GTA V PS3 1.10.
+A classic-style interface prototype for a GTA V PS3 1.10 mod-menu concept.
 
 ## Current status
 This repository contains a browser-based UI prototype only. It is **not** a working PS3 SPRX/plugin and does not modify GTA V.
